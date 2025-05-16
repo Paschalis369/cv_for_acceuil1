@@ -44,70 +44,72 @@
 
     <br>
 
-    <div class="tab-buttons">
-      <button onclick="showTab('Regus', this)">Regus Parnassus</button>
-      <button onclick="showTab('Prophète', this)">Prophète Chauve</button>
-      <button onclick="showTab('Basket', this)">Basketteur</button>
-    </div>
+    <main>
+      <div class="tab-buttons">
+        <button onclick="showTab('Regus', this)">Regus Parnassus</button>
+        <button onclick="showTab('Prophète', this)">Prophète Chauve</button>
+        <button onclick="showTab('Basket', this)">Basketteur</button>
+      </div>
 
+    
+      <div id="Regus" class="tab-content active">
+        <div class="card">
+          <img src="images/Curriculum Vitae/CV.png" alt="News 1" />
+        </div>
+      </div>
 
-  <div id="Regus" class="tab-content active">
-    <div class="card">
-      <img src="images/Curriculum Vitae/CV.png" alt="News 1" />
-    </div>
-  </div>
+      <div id="Prophète" class="tab-content">
+        <div class="card">
+          <img src="images/Curriculum Vitae/CV_Prophète_Chauve.png" alt="Event 1" />
+        </div>
+      </div>
 
-  <div id="Prophète" class="tab-content">
-    <div class="card">
-      <img src="images/Curriculum Vitae/CV_Prophète_Chauve.png" alt="Event 1" />
-    </div>
-  </div>
+      <div id="Basket" class="tab-content">
+        <div class="card">
+          <img src="images/Curriculum Vitae/CV_Basketteur.png" alt="Update 1" />
+        </div>
+      </div>
+    </main>
+    <br>
+    <br>
+    <br>
 
-  <div id="Basket" class="tab-content">
-    <div class="card">
-      <img src="images/Curriculum Vitae/CV_Basketteur.png" alt="Update 1" />
-    </div>
-  </div>
-  <br>
-  <br>
-  <br>
+    <script>
+      function showTab(tabId, button) {
+        // Masquer tous les contenus
+        document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
 
-  <script>
-    function showTab(tabId, button) {
-      // Masquer tous les contenus
-      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+        // Afficher le bon contenu
+        document.getElementById(tabId).classList.add('active');
 
-      // Afficher le bon contenu
-      document.getElementById(tabId).classList.add('active');
+        // Retirer la classe active des boutons
+        document.querySelectorAll('.tab-buttons button').forEach(btn => btn.classList.remove('active'));
 
-      // Retirer la classe active des boutons
-      document.querySelectorAll('.tab-buttons button').forEach(btn => btn.classList.remove('active'));
+        // Ajouter la classe active au bouton cliqué
+        button.classList.add('active');
 
-      // Ajouter la classe active au bouton cliqué
-      button.classList.add('active');
-
-      // Changer la couleur de fond
-      switch (tabId) {
-        case 'Regus':
-          document.body.style.backgroundColor = '#ffe48dd7';
-          break;
-        case 'Prophète':
-          document.body.style.backgroundColor = '#cceeff';
-          break;
-        case 'Basket':
-          document.body.style.backgroundColor = '#ffcccc';
-          break;
+        // Changer la couleur de fond
+        switch (tabId) {
+          case 'Regus':
+            document.body.style.backgroundColor = '#ffe48dd7';
+            break;
+          case 'Prophète':
+            document.body.style.backgroundColor = '#cceeff';
+            break;
+          case 'Basket':
+            document.body.style.backgroundColor = '#ffcccc';
+            break;
+        }
       }
-    }
 
-    // Exécuter une fois au chargement pour activer Regus par défaut
-    window.addEventListener('DOMContentLoaded', () => {
-      const defaultButton = document.querySelector('.tab-buttons button');
-      showTab('Regus', defaultButton);
-    });
-  </script>
+      // Exécuter une fois au chargement pour activer Regus par défaut
+      window.addEventListener('DOMContentLoaded', () => {
+        const defaultButton = document.querySelector('.tab-buttons button');
+        showTab('Regus', defaultButton);
+      });
+    </script>
 
-  <script src="js_Copie/bootstrap.bundle.min.js"></script>
+    <script src="js_Copie/bootstrap.bundle.min.js"></script>
 
     <footer>
       <p>&copy; 2025 Mon Projet. Tous droits réservés.</p>
